@@ -38,6 +38,7 @@ python3 app.py
 - When the score reaches 100, call the `game_over()` function
     - When the game is over, display a "You won" message and play the "win" sound effect
 - Change the score label either using a different font or by using HTML: https://pyglet.readthedocs.io/en/latest/modules/text/index.html
+- Download some (free!) graphics from [https://kenney.nl/assets?q=2d](kenney.nl) and replace the hero and monster. (Cats, maybe??)
 
 ## Medium
 
