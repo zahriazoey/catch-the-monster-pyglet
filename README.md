@@ -1,4 +1,27 @@
 
+# Setup
+
+First, you'll need to install the `pyglet` library so that `python3` can use it.
+
+In a shell, please run the following command. It does not matter what directory you are in.
+
+```sh
+pip3 install pyglet
+```
+
+`pip3` is a program that comes with `python3` and it can download and install free python libraries from the Internet.
+
+On your computer, the program might be called `pip` instead of `pip3`. If `pip3 install pyglet` gives you an error, try `pip install pyglet`.
+
+# The game
+
+To run the game, use the following command:
+
+```sh
+python3 app.py
+```
+
+
 # Explore
 
 - Move the score text so it's not in the way ;)
