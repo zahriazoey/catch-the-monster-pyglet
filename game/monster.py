@@ -1,4 +1,4 @@
-import pyglet, math
+import pyglet
 from pyglet.window import key
 from . import physicalobject, resources
 
@@ -22,14 +22,22 @@ class Monster(physicalobject.PhysicalObject):
         self.counter += 1
         if self.counter >= self.change_at:
             self.counter = 0
+
+            # The randomize() function alters
+            # the current velocity of the monster.
             self.randomize()
 
     def randomize(self):
         self.velocity_x = randint(100, 300)
         self.velocity_y = randint(100, 300)
         
+        # This expression means: there is a 50%
+        # chance we will change our horizontal direction.
         if randint(0, 100) > 50:
             self.velocity_x *= -1
+            
+        # This expression means: there is a 50%
+        # chance we will change our vertical direction.
         if randint(0, 100) > 50:
             self.velocity_y *= -1        
 

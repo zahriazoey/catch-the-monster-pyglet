@@ -1,4 +1,4 @@
-import pyglet, math
+import pyglet
 from pyglet.window import key
 from . import physicalobject, resources
 
@@ -9,7 +9,8 @@ class Player(physicalobject.PhysicalObject):
     def __init__(self, *args, **kwargs):
         super().__init__(img=resources.player_image, *args, **kwargs)
 
-        self.speed = 400
+        # How fast can the player move?
+        self.speed = 300
 
         # Let pyglet handle keyboard events for us
         self.key_handler = key.KeyStateHandler()
@@ -17,9 +18,14 @@ class Player(physicalobject.PhysicalObject):
     def update(self, dt):
         # Do all the normal physics stuff
         super().update(dt)
+
+        # When no keys are pressed, don't
+        # move the player
         self.velocity_x = 0
         self.velocity_y = 0
 
+        # When we press keys, modify the current
+        # velocity of the player
         if self.key_handler[key.LEFT]:
             self.velocity_x = -self.speed
         if self.key_handler[key.RIGHT]:
