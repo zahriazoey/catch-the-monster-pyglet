@@ -20,6 +20,8 @@ center_image(monster_image)
 
 background = pyglet.resource.image('background.png')
 
+
+
 # bullet_image = pyglet.resource.image("bullet.png")
 # center_image(bullet_image)
 

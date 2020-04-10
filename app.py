@@ -43,7 +43,10 @@ def game_over():
     global is_drawing
 
     is_drawing = False
-    music.pause()
+    music ('./resources/win.wav')
+    won_label = pyglet.text.Label(text='You won!', x = 100, y = 50, batch=main_batch)
+
+
 
     
     
@@ -82,6 +85,11 @@ def update(dt):
 
             score += 10
             score_label.text = f"Caught {score}"
+            if score == 100: 
+                print('You won!')
+            
+            #won_label = pyglet.text.Label(text='You won!', x = 100, y = 50, batch=main_batch)
+
             
 
             gotcha_sound_effect = pyglet.media.load('./resources/bullet.wav', streaming=False)

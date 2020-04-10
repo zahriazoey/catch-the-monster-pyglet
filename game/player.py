@@ -43,6 +43,5 @@ class Player(physicalobject.PhysicalObject):
     def handle_collision_with(self, other_object):
         self.dead = False
     
-    # def super_score(self):
-    #     self(score * 10 )
-    #     score = 0 
+    
+    
