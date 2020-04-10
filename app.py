@@ -16,7 +16,7 @@ music = pyglet.media.Player()
 music.queue(theme_song)
 
 # Set up the two top labels
-score_label = pyglet.text.Label(text="Caught 0", x=15, y=75, batch=main_batch)
+score_label = pyglet.text.Label(text="Caught 0", x=5, y=5, batch=main_batch)
 
 # Initialize the player sprite
 hero = player.Player(x=400, y=300, batch=main_batch)
@@ -44,6 +44,9 @@ def game_over():
 
     is_drawing = False
     music.pause()
+
+    
+    
 
 
 def update(dt):
@@ -77,8 +80,9 @@ def update(dt):
             # Remove the object from our list
             game_objects.remove(to_remove)
 
-            score += 1
+            score += 10
             score_label.text = f"Caught {score}"
+            
 
             gotcha_sound_effect = pyglet.media.load('./resources/bullet.wav', streaming=False)
             gotcha_sound_effect.play()
@@ -93,5 +97,5 @@ if __name__ == "__main__":
     pyglet.clock.schedule_interval(update, 1 / 120.0)
 
     music.play()
-    # Tell pyglet to do its thing
+    # # Tell pyglet to do its thing
     pyglet.app.run()
